@@ -1,0 +1,54 @@
+#container {
+    width:1000px;
+    border: 1px solid lightgrey;
+    margin: 0 auto;
+}
+
+/* header */
+#header {
+    height: 100px;
+    padding: 10px 0px;
+}
+
+#brand {
+    float: left;
+}
+
+h1 a {
+    font-size: 50px;
+    font-weight: 100;
+    color: #747a71;
+    text-decoration: none;
+    padding-left: 0px;
+}
+
+/* Search */
+#search {
+    float: right;
+    background: linear-gradient(#e6d21f, #b3a423);
+    width: 400px;
+    height: 50px;
+    padding: 20px 20px 0 20px;
+    margin-top: 20px;
+}
+
+.text {
+    float: left;
+    width: 200px;
+    padding: 5px;
+    font-size: 15px;
+    background: white url(assets/search.png) right center no-repeat;
+}
+
+.submit {
+    float: right;
+    padding: 6px;
+    font-weight: 500;
+    color: white;
+    background-color: #747a71;
+    font-size: 15px;
+}
+
+.clear {
+    clear: both;
+}
