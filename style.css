@@ -52,3 +52,41 @@ h1 a {
 .clear {
     clear: both;
 }
+
+/* Menu */
+#menu {
+    height: 70px;
+    background: linear-gradient(#91998d, #747a71);
+    padding: 7px  0 0px 0;
+}
+
+ul {
+    list-style: none;
+}
+
+#menu ul li{
+    float: left;
+    padding: 0px 10px;
+    padding: 0 35px;
+    height: 30px;
+    border-right: 1px solid #e6d21f;
+} 
+
+.lastChild{
+    border-right: none !important;
+}
+
+#menu ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 17px;
+    color: #e6d21f;
+    line-height: 30px;
+}
+
+#menu ul li a:hover {
+    border: 1px solid white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px;
+}
