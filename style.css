@@ -1,6 +1,6 @@
 #container {
     width:1000px;
-    border: 1px solid lightgrey;
+    /* border: 1px solid lightgrey; */
     margin: 0 auto;
 }
 
@@ -26,6 +26,10 @@ h1 a {
 #search {
     float: right;
     background: linear-gradient(#e6d21f, #b3a423);
+    background: -webkit-linear-gradient(#e6d21f, #b3a423);
+    background: -o-linear-gradient(#e6d21f, #b3a423);
+    background: -moz-linear-gradient(#e6d21f, #b3a423);
+    background: -ms-linear-gradient(#e6d21f, #b3a423);
     width: 400px;
     height: 50px;
     padding: 20px 20px 0 20px;
@@ -45,7 +49,7 @@ h1 a {
     padding: 6px;
     font-weight: 500;
     color: white;
-    background-color: #747a71;
+    background-color: #7a9b6a;
     font-size: 15px;
 }
 
@@ -53,10 +57,14 @@ h1 a {
     clear: both;
 }
 
-/* Menu */
+/* Menu bar*/
 #menu {
     height: 70px;
     background: linear-gradient(#91998d, #747a71);
+    background: -webkit-linear-gradient(#91998d, #747a71);
+    background: -o-linear-gradient(#91998d, #747a71);
+    background: -moz-linear-gradient(#91998d, #747a71);
+    background: -ms-linear-gradient(#91998d, #747a71);
     padding: 7px  0 0px 0;
 }
 
@@ -82,11 +90,112 @@ ul {
     font-size: 17px;
     color: #e6d21f;
     line-height: 30px;
+    -webkit-transition: 500ms ease;
+    -moz-transition: 500ms ease;
+    -o-transition: 500ms ease;
+    -ms-transition: 500ms ease;
+    transition: 500ms ease;
 }
 
-#menu ul li a:hover {
+#menu ul li a:hover, #menu ul li a.active {
     border: 1px solid white;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: bold;
     padding: 5px;
+    color: #747a71;
+    background-color: #fdf49f;
 }
+
+/* Introduction */
+#introduction {
+    background: linear-gradient(white, #d1d1d1, white);
+    background: -webkit-linear-gradient(white, #d1d1d1, white);
+    background: -o-linear-gradient(white, #d1d1d1, white);
+    background: -moz-linear-gradient(white, #d1d1d1, white);
+    background: -ms-linear-gradient(white, #d1d1d1, white);
+    padding: 30px;
+    margin: 16px 0
+}
+
+#introduction h3 {
+    font-size: 45px;
+    font-weight: 200;
+}
+
+#introduction p {
+    font-size: 23px;
+    text-align: inherit;
+    font-weight: 100;
+}
+
+/* Side bars */
+.sideBar {
+    height: 510px;
+    width: 420px;
+    border: 1px solid #d1d1d1;
+    border-radius: 20px;
+    padding: 10px 30px;
+}
+
+
+.sideBar h3 {
+    font-size: 30px;
+    font-weight: 100;
+    margin: 5px 0 0 35px;
+}
+
+#leftSideBar ul li {
+    padding-bottom: 7px;
+    padding-top: 7px;
+    padding-left: 42px;
+    background: url(assets/dot.png) left center no-repeat;
+}
+
+#rightSideBar ul li {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 42px;
+    background: url(assets/check.png) left center no-repeat;
+}
+
+.sideBar ul li a {
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+}
+
+.sideBar ul li a:hover, .sideBar ul li a.active {
+    text-decoration: underline solid black;
+    font-weight: bold;
+    font-size: 22px;
+    padding: 5px;
+    -webkit-transition: 500ms ease;
+    -moz-transition: 500ms ease;
+    -o-transition: 500ms ease;
+    -ms-transition: 500ms ease;
+    transition: 500ms ease;
+}
+
+#leftSideBar {
+    float: left;
+    
+}
+
+#rightSideBar {
+    float: right;
+
+ }
+
+ /* Footer */
+ .footer {
+    margin-top: 20px;
+    height: 30px;
+    background: linear-gradient(#91998d, #747a71);
+    padding: 5px  0 18px 0;
+ }
+
+ .footer p {
+     color: white;
+     text-align: center;
+     font-size: 15px;
+ }
