@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Math Game</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+        <link rel="stylesheet" href="style.css">
+        <!-- font -->
+        <link href="https://fonts.googleapis.com/css?family=Dosis:400,700|Sarala:400,700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="container">
+            <div id="timer">Time remaining: <span id="clock"></span></div>
+            <div id="score_box">
+                Score: <span id="score_value">0</span>
+            </div>
+
+            <!-- feedback -->
+            <div id="correct">Correct</div>
+            <div id="wrong">Try Again</div>
+
+            <div id="question"></div>
+
+            <div id="instruction">click on the correct answer</div>
+
+            <div id="choices">
+                <div id="box1" class="box"></div>
+                <div id="box2" class="box"></div>
+                <div id="box3" class="box"></div>
+                <div id="box4" class="box"></div>
+            </div>
+
+            <div id="start_reset">Start Game</div>
+
+            <div id="game_over"></div>
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>
