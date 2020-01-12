@@ -18,8 +18,8 @@ document.getElementById('start_reset').onclick = function() {
 
         // and show the timer
         show('timer');
-            time_remaining = 12;
-        document.getElementById('clock').innerHTML = 12;
+            time_remaining = 59;
+            document.getElementById('clock').innerHTML = time_remaining;
 
         // and replace "start" with "reset
         document.getElementById('start_reset').innerHTML = 'Reset Game';
@@ -31,6 +31,39 @@ document.getElementById('start_reset').onclick = function() {
         generateQA();
     }
 }
+
+// clicking on answer boxes
+for (i = 1; i < 5; i++) {
+    document.getElementById('box'+i).onclick = function() {
+        // checking if we are playing
+        if (playing == true) {
+            // and...
+            if(this.innerHTML == correct_answer) {
+                score ++;
+                document.getElementById('score_value').innerHTML = score;
+
+                // hide "wrong" message and show "correct" answer for 1 sec.
+                hide('wrong');
+                show('correct');
+                setTimeout(function() {
+                    hide('correct');
+                }, 1000);
+
+                // generate new generateQA
+                generateQA();
+            
+            }else {
+                // hide ('correct')
+                hide('correct');
+                show('wrong');
+                setTimeout(function() {
+                    hide('wrong');
+                }, 1000)
+            }
+        }
+    }
+}
+
 
 // functions
 startCountdown = () => {
@@ -76,6 +109,8 @@ generateQA = () => {
     document.getElementById('box' + correct_position).innerHTML = correct_answer;
 
     // fill the other boxes with wrong answers
+    var answers = [correct_answer];
+
     for(i = 1; i < 5; i++) {
         if(i != correct_position) {
             var wrong_answer;
@@ -84,10 +119,14 @@ generateQA = () => {
                do{
                 wrong_answer = (1 + Math.round(Math.random() * 9)) * (1 + Math.round(Math.random() * 9));
                }while(
-                   wrong_answer == correct_answer
+                    // to make it more efficient we will make sure we don't have same value (number) in the answers array.
+                   (answers.indexOf(wrong_answer) > -1)
                )
             // console.log(wrong_answer);
             document.getElementById('box' + i).innerHTML = wrong_answer;
+            answers.push(wrong_answer);
         }
     }
 }
+
+
