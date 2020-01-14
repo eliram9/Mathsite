@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Fruits Game</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+        <link rel="stylesheet" href="style.css">
+        <!-- font -->
+        <link href="https://fonts.googleapis.com/css?family=Dosis:400,700|Sarala:400,700&display=swap" rel="stylesheet">
+        <!-- jQuey JS file -->
+        <script src="/js/jquery-1.11.2.js"></script>
+        <!-- jQuery CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="container">
+            <div id="lives"><span id="heart"></span></div>
+            <div id="score_box">
+                Score: <span id="score_value">0</span>
+            </div>
+
+            <!-- feedback -->
+            <div id="correct">Correct</div>
+            <div id="wrong">Try Again</div>
+
+            <div id="fruitsTarget">
+                <img id="fruit" class="fruit">
+            </div>
+
+            <div id="instruction">catch the fruit</div>
+
+            <div id="start_reset">Start Game</div>
+
+            <div id="game_over"></div>
+        </div>
+        <script src="app-jQuery.js"></script>
+    </body>
+</html>
