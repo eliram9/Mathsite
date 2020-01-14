@@ -1,6 +1,8 @@
 var playing = false;
 var score;
 var livesLeft;
+var step;
+var move;
 var fruits = ['apple', 'banana', 'cherry', 'grape', 'grenade', 'lemon', 'orange', 'pear', 'pineapple'];
 
 
@@ -11,6 +13,8 @@ $(document).ready(function() {
         if(playing == true) {
             location.reload();
         }else {
+            $('#game_over').hide();
+
             playing = true;
             // set score to 0 
             score = 0; 
@@ -36,9 +40,11 @@ $(document).ready(function() {
 
 });
 
-// Main Functions
+// Main Functions Section
 addLives = () => {
+    $('#lives').empty();
     for(i = 0; i < livesLeft; i++) {
+        
         $('#lives').append(' <img src="images/heart.png" class="heart"> ');
     }
 }
@@ -53,6 +59,37 @@ startAction = () => {
     var fruit_position = Math.floor(Math.random() * 545 ) + 5;
     $('#fruit').css({'left': fruit_position, 'top': -40});
 
+    // generating the step (speed) of a random fruit.
+    step = Math.floor(Math.random() * 5) + 1;
+
+    // move fruit down one step every 10ms;
+    move = setInterval(function() {
+        $('#fruit').css('top', $('#fruit').position().top + step);
+
+        // check if the fruit is too low (if the user miss the fruit on the white screen)
+        if($('#fruit').position().top > $('#fruitsTarget').height()) {
+           
+            // if we still have livesLeft
+            if(livesLeft > 1) {
+                // so, generate a new fruit (lines 49-63)
+                $('#fruit').show();
+                generateFruit();
+                var fruit_position = Math.floor(Math.random() * 545 ) + 5;
+                $('#fruit').css({'left': fruit_position, 'top': -40});
+                step = Math.floor(Math.random() * 5) + 1;
+
+                //  reduce one heart from livesLeft
+                livesLeft --;
+                addLives();
+                
+            } else {
+                playing = false;
+                $('#lives').hide();
+                $('#game_over').show();
+            }
+        }
+
+    }, 10);   
 }
 
 // generate a random fruit
