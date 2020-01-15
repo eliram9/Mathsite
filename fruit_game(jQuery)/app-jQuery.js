@@ -60,7 +60,7 @@ startAction = () => {
     $('#fruit').css({'left': fruit_position, 'top': -40});
 
     // generating the step (speed) of a random fruit.
-    step = Math.floor(Math.random() * 5) + 1;
+    step = Math.floor(Math.random() * 3) + 1;
 
     // move fruit down one step every 10ms;
     move = setInterval(function() {
@@ -84,8 +84,13 @@ startAction = () => {
                 
             } else {
                 playing = false;
+                $('#start_reset').html('Start Game');
                 $('#lives').hide();
                 $('#game_over').show();
+                $('#game_over').html('<p>GAME OVER!</p> <p>Your Score is: ' + score +' </p>');
+
+                // stopping the setInterval func which applying to the moce variable 
+                stopMove();
             }
         }
 
@@ -96,6 +101,12 @@ startAction = () => {
 generateFruit = () => {
     var fruit_num  = Math.round(Math.random() * 8);
     $('#fruit').attr('src', 'images/' + fruits[fruit_num] + '.png');
+}
+
+// stopping moving the fruits down & hide fruits when the game is over.
+stopMove = () => {
+    clearInterval(move);
+    $('#fruit').hide();
 }
 
 

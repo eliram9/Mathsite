@@ -184,12 +184,12 @@ body {
     width: 450px;
     background: linear-gradient(#fcc661, rgb(255, 128, 128));
     color: white;
-    font-size: 36px;
+    font-size: 45px;
     text-align: center;
-    line-height: 2.5rem;
+    line-height: 5.3rem;
     font-weight: bold;
     position: absolute;
-    top: 120px;
+    top: 125px;
     left: 170px;
     z-index: 2;
     display: none;
