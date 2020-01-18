@@ -33,12 +33,15 @@ $(document).ready(function() {
         }
     });
 
-
-
-
-
-
-});
+    // slice fruits
+    $('#fruit').click(function(){
+        score++;
+        $('#score_value').html(score);
+        clearInterval(move);
+        $("#fruit1").hide("explode", 500);
+        //send new fruit
+        setTimeout(startAction, 500); })
+    });
 
 // Main Functions Section
 addLives = () => {
